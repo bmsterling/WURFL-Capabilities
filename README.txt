@@ -1,6 +1,6 @@
 === WURFL Capabilities ===
 Contributors: bmsterling 
-Donate link:x
+Donate link:
 Tags: wurfl, mobile, capabilites, theme
 Requires at least: 3.5
 Tested up to: 3.5.1
