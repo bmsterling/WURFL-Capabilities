@@ -21,4 +21,8 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 None yet.
 
 == Changelog ==
+0.2
+Remove ZIP file
+Add XML of WURFL database
+
 0.1 Initial development
