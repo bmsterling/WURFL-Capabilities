@@ -4,13 +4,15 @@ Donate link:
 Tags: wurfl, mobile, capabilites, theme
 Requires at least: 3.5
 Tested up to: 3.5.1
-Stable tag: trunk
+Stable tag: 0.3
 
 Using WURFL to expose capabilities of your users browser.
 
 == Description ==
 
 Using WURFL to expose capabilities of your users browser. See http://wurfl.sourceforge.net/help_doc.php for full list of capability checking.
+
+WURFL is the registered trademark of ScientiaMobile, Inc., Reston, VA, USA
 
 == Installation ==
 
@@ -21,6 +23,9 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 None yet.
 
 == Changelog ==
+0.3
+Remove XML
+
 0.2
 Remove ZIP file
 Add XML of WURFL database
