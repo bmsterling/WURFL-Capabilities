@@ -1,33 +1,59 @@
 === WURFL Capabilities ===
 Contributors: bmsterling 
-Donate link:
+Donate link:http://benjaminsterling.com/donations/
 Tags: wurfl, mobile, capabilites, theme
 Requires at least: 3.5
 Tested up to: 3.5.1
-Stable tag: 0.3
+Stable tag: 0.3.2
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Using WURFL to expose capabilities of your users browser.
 
 == Description ==
 
-Using WURFL to expose capabilities of your users browser. See http://wurfl.sourceforge.net/help_doc.php for full list of capability checking.
+Using WURFL to expose capabilities of your users browser. See <a href=\"http://wurfl.sourceforge.net/help\_doc.php\" target=\"\_blank\">http://wurfl.sourceforge.net/help_doc.php</a> for full list of capability checking.
 
-WURFL is the registered trademark of ScientiaMobile, Inc., Reston, VA, USA
+Some initial methods that are exposed are:
+
+*   is\_wireless\_device
+*   is_tablet
+*   is_touch
+*   supports_borderradius
+*   supports_gradients
+*   pointing_method
+*   getCapability (points to the WURFL API method of the same name, pass in the param of capability you\'d like to get.  See the help doc link for those param names)
+
+<div>
+  <strong>Example usage</strong>
+</div>
+
+<div>
+  `$wurflcap->is_touch();`
+</div>
+
+<div>
+  <br />
+</div>
+
+<div>
+  Please be aware of the licensing at <a href=\"http://wurfl.sourceforge.net/license.php\" target=\"_blank\">http://wurfl.sourceforge.net/license.php</a>
+</div>
+
+*WURFL is the registered trademark of ScientiaMobile, Inc., Reston, VA, USA*
 
 == Installation ==
 
-Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.  Initial activation will take a bit of time.  The WURFL zip file will be extracted and create cache files under wp-content/wurfl.
+Installation is pretty straight forward, follow steps in order:
+
+1.  Download and extract the plugin to your plugins directory (wp-content/plugins)
+2.  Download the most recent WURFL database from <a href=\"http://sourceforge.net/projects/wurfl/files/WURFL/\" target=\"_blank\">http://sourceforge.net/projects/wurfl/files/WURFL/</a>
+3.  Place the downloaded zip file in the WURFL Capabilities plugin folder
+4.  Rename the zip file to **wurfl.zip**
+5.  Active the plugin. Note: activation may, depending on your server, take about a minute, do not refresh or close your browser. The WURFL API is caching the data based off the XML that is in zip file.
 
 == Frequently Asked Questions ==
 
-None yet.
+= How do I update the database? =
 
-== Changelog ==
-0.3
-Remove XML
-
-0.2
-Remove ZIP file
-Add XML of WURFL database
-
-0.1 Initial development
+Follow steps 2 to 4 of the installation steps, the WURFL API checkes the zip for last modifed and, if changed, will update the cache. Again, be aware the initial change will probably take about a minute depending on your server.
