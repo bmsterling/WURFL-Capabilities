@@ -30,27 +30,35 @@ class WURFLCap {
      */
     public function activate( $network_wide ) {
         $new_file_path = WURFL_BASE_DIR;
+        
+        if (!file_exists(WURFL_PLUGIN_DIR.'/wurfl.zip')){
+            wp_die("wurfl.zip file not found");
+        }
 
         if (!file_exists($new_file_path)) {
-            if (!mkdir($new_file_path, 0755, true))
-                return array(
-                    'error' => 'Permission denied, make sure you have write permission to wp-content folder.'
-                );
+            if (!mkdir($new_file_path, 0755, true)){
+                wp_die("Permission denied, make sure you have write permission to wp-content folder.");
+                // return array(
+                    // 'error' => 'Permission denied, make sure you have write permission to wp-content folder.'
+                // );
+            }
         }
         
         $persistence = WURFL_PERSISTENCE_DIR;
         $cache       = WURFL_CACHE_DIR;
         
         if (!mkdir($persistence, 0755, true)) {
-            return array(
-                'error' => 'Permission denied, make sure you have write permission to '.$new_file_path.' folder.'
-            );
+            wp_die('Permission denied, make sure you have write permission to '.$new_file_path.' folder.');
+            // return array(
+                // 'error' => 'Permission denied, make sure you have write permission to '.$new_file_path.' folder.'
+            // );
         }
         
         if (!mkdir($cache, 0755, true)) {
-            return array(
-                'error' => 'Permission denied, make sure you have write permission to '.$new_file_path.' folder.'
-            );
+            wp_die('Permission denied, make sure you have write permission to '.$new_file_path.' folder.');
+            // return array(
+                // 'error' => 'Permission denied, make sure you have write permission to '.$new_file_path.' folder.'
+            // );
         }
         
     } // end activate
