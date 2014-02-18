@@ -201,5 +201,22 @@ class WURFLCap {
 
     public function pointing_method () {
         return $this->getCapability('pointing_method');
-    }
+		}
+
+		public function is_smartphone () {
+			$is_wireless = $this->is_wireless_device() == 'true';
+			$is_tablet = $this->is_tablet() == 'true';
+			$has_web_support = $this->getCapability('device_claims_web_support') == 'true';
+			$is_phone = $this->getCapability('can_assign_phone_number') == 'true';
+
+			if($is_tablet) {
+				$ret = false;
+			} else if ( $is_wireless && $has_web_support && $is_phone ) {
+				$ret = true;
+			} else {
+				$ret = false;
+			}
+
+			return ($ret == 'true');
+		}
 }
