@@ -38,11 +38,10 @@ class WURFLCap {
         }
 
         if (!safe_mkdir($new_file_path, 0755, true)){
-                wp_die("Permission denied, make sure you have write permission to wp-content folder.");
-                // return array(
-                    // 'error' => 'Permission denied, make sure you have write permission to wp-content folder.'
-                // );
-            }
+            wp_die("Permission denied, make sure you have write permission to wp-content folder.");
+            // return array(
+                // 'error' => 'Permission denied, make sure you have write permission to wp-content folder.'
+            // );
         }
 
         $persistence = WURFL_PERSISTENCE_DIR;
