@@ -33,8 +33,8 @@ class WURFLCap {
     public function activate( $network_wide ) {
         $new_file_path = WURFL_BASE_DIR;
 
-        if (!file_exists(WURFL_PLUGIN_DIR.'/wurfl.zip')){
-            wp_die("wurfl.zip file not found");
+        if (!file_exists(WURFL_PLUGIN_DIR.'/wurfl.xml')){
+            wp_die("wurfl.zip file not found, please read the readme file for installation instructions.");
         }
 
         if (!safe_mkdir($new_file_path, 0755, true)){
@@ -152,7 +152,7 @@ class WURFLCap {
         $wurflConfig = new WURFL_Configuration_InMemoryConfig();
 
         // Set location of the WURFL File
-        $wurflConfig->wurflFile(WURFL_PLUGIN_DIR.'/wurfl.zip');
+        $wurflConfig->wurflFile(WURFL_PLUGIN_DIR.'/wurfl.xml');
 
         // Set the match mode for the API ('performance' or 'accuracy')
         $wurflConfig->matchMode('performance');

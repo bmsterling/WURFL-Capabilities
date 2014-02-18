@@ -4,7 +4,7 @@
     Plugin Name: WURFL Capabilities
     Plugin URI: https://github.com/bmsterling/WURFL-Capabilities
     Description: Using WURFL to expose capabilities of your users browser.
-    Version: 0.3.3
+    Version: 0.3.5
     Author: Benjamin Sterling
     Author URI: http://www.benjaminsterling.com
 
