@@ -34,10 +34,10 @@ class WURFLCap {
         $new_file_path = WURFL_BASE_DIR;
 
         if (!file_exists(WURFL_PLUGIN_DIR.'/wurfl.xml')){
-            wp_die("wurfl.zip file not found, please read the readme file for installation instructions.");
+            wp_die("wurfl.xml file not found, please read the readme file for installation instructions.");
         }
 
-        if (!safe_mkdir($new_file_path, 0755, true)){
+        if (!WURFL_FileUtils::safe_mkdir($new_file_path, 0755, true)){
             wp_die("Permission denied, make sure you have write permission to wp-content folder.");
             // return array(
                 // 'error' => 'Permission denied, make sure you have write permission to wp-content folder.'
@@ -47,14 +47,14 @@ class WURFLCap {
         $persistence = WURFL_PERSISTENCE_DIR;
         $cache       = WURFL_CACHE_DIR;
 
-        if (!safe_mkdir($persistence, 0755, true)) {
+        if (!WURFL_FileUtils::safe_mkdir($persistence, 0755, true)) {
             wp_die('Permission denied, make sure you have write permission to '.$new_file_path.' folder.');
             // return array(
                 // 'error' => 'Permission denied, make sure you have write permission to '.$new_file_path.' folder.'
             // );
         }
 
-        if (!safe_mkdir($cache, 0755, true)) {
+        if (!WURFL_FileUtils::safe_mkdir($cache, 0755, true)) {
             wp_die('Permission denied, make sure you have write permission to '.$new_file_path.' folder.');
             // return array(
                 // 'error' => 'Permission denied, make sure you have write permission to '.$new_file_path.' folder.'
